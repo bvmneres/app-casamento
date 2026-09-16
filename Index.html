@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+user-scalable=no" />
+<title>Casamento Bruno & Jeanne</title>
+<meta name="theme-color" content="#8B5E3C" id="meta-theme-color" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Casamento" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght
+@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+rel="stylesheet">
+<style>
+:root {
+/* Tema Default: Terracota & Linho Elegante (Inspirado no RE9 Garden) */
+--primary: #8B5E3C;
+--primary-light: #F4EDE8;
+--primary-dark: #684126;
+--secondary: #526E48;
+--secondary-light: #EBF1EA;
+--accent: #D4AF37;
+--bg: #FBF9F7;
+--surface: #FFFFFF;
+--surface-border: #E8E2DD;
+--text: #2C2623;
+--text-muted: #79716B;
+--font-title: 'Playfair Display', serif;
+--font-body: 'Montserrat', sans-serif;
+--radius: 14px;
+--shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+-webkit-tap-highlight-color: transparent; }
+body {
+font-family: var(--font-body);
+background-color: var(--bg);
+color: var(--text);
+line-height: 1.5;
+padding-bottom: 80px;
+user-select: none;
+}
+/* Top Bar */
+header {
+background: var(--surface);
+border-bottom: 1px solid var(--surface-border);
+padding: 12px 16px;
+position: sticky;
+top: 0;
+z-index: 100;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.brand-title {
+font-family: var(--font-title);
+font-size: 1.15rem;
+font-weight: 700;
+color: var(--primary);
+}
+.brand-subtitle {
+font-size: 0.75rem;
+color: var(--text-muted);
+font-weight: 500;
+}
+.btn-icon {
+background: none;
+border: none;
+cursor: pointer;
+padding: 8px;
+border-radius: 50%;
+color: var(--text-muted); font-size: 1.2rem;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: background 0.2s;
+}
+.btn-icon:hover {
+background: var(--primary-light);
+color: var(--primary);
+}
+/* Container */
+.container {
+max-width: 600px;
+margin: 0 auto;
+padding: 16px;
+}
+/* Tabs Content */
+.tab-view {
+display: none;
+}
+.tab-view.active {
+display: block;
+animation: fadeIn 0.25s ease-out;
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(4px); }
+to { opacity: 1; transform: translateY(0); }
+}
+/* Cards */
+.card {
+background: var(--surface);
+border: 1px solid var(--surface-border);
+border-radius: var(--radius);
+padding: 16px;
+margin-bottom: 14px;
+box-shadow: var(--shadow);
+}
+/* Hero Countdown */ .hero-card {
+background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+color: #FFF;
+border: none;
+text-align: center;
+padding: 24px 16px;
+position: relative;
+overflow: hidden;
+}
+.hero-label {
+font-size: 0.75rem;
+letter-spacing: 2px;
+text-transform: uppercase;
+opacity: 0.85;
+font-weight: 600;
+}
+.countdown-grid {
+display: flex;
+justify-content: center;
+gap: 12px;
+margin: 16px 0 12px;
+}
+.count-box {
+background: rgba(255,255,255,0.18);
+backdrop-filter: blur(8px);
+padding: 10px 14px;
+border-radius: 12px;
+min-width: 64px;
+}
+.count-num {
+font-size: 1.6rem;
+font-weight: 700;
+line-height: 1.1;
+}
+.count-sub {
+font-size: 0.65rem;
+text-transform: uppercase;
+opacity: 0.9;
+}
+.hero-tag {
+display: inline-block;
+background: rgba(255,255,255,0.22);
+padding: 4px 12px; border-radius: 20px;
+font-size: 0.75rem;
+font-weight: 500;
+}
+/* Metric Grid */
+.metric-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+margin-bottom: 16px;
+}
+.metric-card {
+background: var(--surface);
+border: 1px solid var(--surface-border);
+border-radius: var(--radius);
+padding: 14px;
+cursor: pointer;
+transition: transform 0.15s, border-color 0.15s;
+}
+.metric-card:active {
+transform: scale(0.98);
+}
+.metric-title {
+font-size: 0.75rem;
+color: var(--text-muted);
+font-weight: 600;
+margin-bottom: 4px;
+}
+.metric-value {
+font-size: 1.15rem;
+font-weight: 700;
+color: var(--text);
+}
+.metric-sub {
+font-size: 0.7rem;
+color: var(--text-muted);
+margin-top: 4px;
+}
+/* Badges & Tags */
+.badge {
+display: inline-block; padding: 3px 8px;
+border-radius: 6px;
+font-size: 0.7rem;
+font-weight: 600;
+}
+.badge-pago, .badge-concluido, .badge-confirmado, .badge-ganho {
+background: #E6F4EA;
+color: #137333;
+}
+.badge-pendente, .badge-negociacao, .badge-desejado {
+background: #FEF7E0;
+color: #B06000;
+}
+.badge-reembolsar, .badge-reservado {
+background: #E8F0FE;
+color: #1A73E8;
+}
+.badge-alta {
+background: #FCE8E6;
+color: #C5221F;
+}
+/* Filter Pill */
+.filter-pills {
+display: flex;
+gap: 8px;
+overflow-x: auto;
+padding-bottom: 8px;
+margin-bottom: 12px;
+scrollbar-width: none;
+}
+.filter-pills::-webkit-scrollbar { display: none; }
+.pill {
+background: var(--surface);
+border: 1px solid var(--surface-border);
+padding: 6px 14px;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 500;
+white-space: nowrap;
+cursor: pointer;
+color: var(--text-muted);
+} .pill.active {
+background: var(--primary);
+color: #FFF;
+border-color: var(--primary);
+}
+/* List Items */
+.list-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px;
+border-bottom: 1px solid var(--surface-border);
+}
+.list-item:last-child {
+border-bottom: none;
+}
+.item-info {
+flex: 1;
+padding-right: 12px;
+}
+.item-title {
+font-weight: 600;
+font-size: 0.9rem;
+color: var(--text);
+}
+.item-meta {
+font-size: 0.75rem;
+color: var(--text-muted);
+margin-top: 2px;
+}
+.item-val {
+text-align: right;
+font-weight: 700;
+font-size: 0.95rem;
+}
+/* Acerto 50/50 Card */
+.acerto-card {
+background: var(--primary-light);
+border: 1px solid rgba(139, 94, 60, 0.2);
+border-radius: var(--radius);
+padding: 14px; margin-bottom: 16px;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+.acerto-icon {
+font-size: 1.8rem;
+}
+.acerto-text {
+font-size: 0.85rem;
+font-weight: 600;
+color: var(--primary-dark);
+}
+/* Floating Action Button */
+.fab {
+position: fixed;
+bottom: 84px;
+right: 20px;
+background: var(--primary);
+color: #FFF;
+border: none;
+padding: 14px 20px;
+border-radius: 30px;
+font-weight: 600;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 8px;
+box-shadow: 0 6px 20px rgba(139, 94, 60, 0.4);
+cursor: pointer;
+z-index: 90;
+transition: transform 0.15s;
+}
+.fab:active { transform: scale(0.95); }
+/* Bottom Navigation Bar */
+nav.bottom-nav {
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+background: var(--surface); border-top: 1px solid var(--surface-border);
+display: flex;
+justify-content: space-around;
+padding: 6px 0 10px;
+z-index: 100;
+}
+.nav-btn {
+background: none;
+border: none;
+cursor: pointer;
+color: var(--text-muted);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 3px;
+font-size: 0.68rem;
+font-weight: 500;
+flex: 1;
+transition: color 0.15s;
+}
+.nav-btn svg {
+width: 22px;
+height: 22px;
+fill: currentColor;
+}
+.nav-btn.active {
+color: var(--primary);
+font-weight: 700;
+}
+/* Modal / Drawer */
+.modal-backdrop {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.5);
+z-index: 200;
+align-items: flex-end;
+}
+.modal-backdrop.active {
+display: flex;
+animation: fadeIn 0.2s ease-out;
+} .modal-sheet {
+background: var(--surface);
+border-radius: 20px 20px 0 0;
+width: 100%;
+max-width: 600px;
+margin: 0 auto;
+padding: 20px;
+max-height: 85vh;
+overflow-y: auto;
+box-shadow: 0 -4px 24px rgba(0,0,0,0.15);
+}
+.modal-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 16px;
+}
+.modal-title {
+font-family: var(--font-title);
+font-size: 1.15rem;
+color: var(--primary);
+}
+/* Forms */
+.form-group {
+margin-bottom: 14px;
+}
+.form-label {
+display: block;
+font-size: 0.78rem;
+font-weight: 600;
+color: var(--text-muted);
+margin-bottom: 4px;
+}
+.form-input, .form-select, .form-textarea {
+width: 100%;
+padding: 10px 12px;
+border: 1px solid var(--surface-border);
+border-radius: 8px;
+font-size: 0.9rem;
+font-family: inherit;
+background: var(--bg);
+color: var(--text); }
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+outline: none;
+border-color: var(--primary);
+}
+.btn-submit {
+width: 100%;
+padding: 12px;
+background: var(--primary);
+color: #FFF;
+border: none;
+border-radius: 10px;
+font-weight: 600;
+font-size: 0.95rem;
+cursor: pointer;
+margin-top: 8px;
+}
+/* Customization Color Swatches */
+.swatch-group {
+display: flex;
+gap: 10px;
+margin-top: 6px;
+}
+.swatch {
+width: 38px;
+height: 38px;
+border-radius: 50%;
+cursor: pointer;
+border: 3px solid #FFF;
+box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+display: flex;
+align-items: center;
+justify-content: center;
+color: #FFF;
+font-size: 0.8rem;
+}
+.swatch.selected {
+outline: 2px solid var(--primary);
+}
+</style>
+</head>
+<body> <!-- Top App Bar -->
+<header>
+<div>
+<div class="brand-title" id="app-title-display">Bruno & Jeanne</div>
+<div class="brand-subtitle" id="app-subtitle-display">18 de Setembro de 2027 • RE9
+Garden</div>
+</div>
+<button class="btn-icon" onclick="openThemeModal()" title="Personalizar Identidade Visual">
+⚙️
+</button>
+</header>
+<div class="container">
+<!-- ABA 1: DASHBOARD -->
+<div id="tab-dashboard" class="tab-view active">
+<!-- Hero Countdown -->
+<div class="card hero-card">
+<div class="hero-label">Contagem Regressiva</div>
+<div class="countdown-grid">
+<div class="count-box">
+<div class="count-num" id="cd-days">--</div>
+<div class="count-sub">Dias</div>
+</div>
+<div class="count-box">
+<div class="count-num" id="cd-hours">--</div>
+<div class="count-sub">Horas</div>
+</div>
+<div class="count-box">
+<div class="count-num" id="cd-mins">--</div>
+<div class="count-sub">Min</div>
+</div>
+</div>
+<div class="hero-tag">📍 RE9 Garden • Cuiabá/MT</div>
+</div>
+<!-- Quick Metrics Grid -->
+<div class="metric-grid">
+<div class="metric-card" onclick="switchTab('expenses')">
+<div class="metric-title">Despesas Este Mês</div>
+<div class="metric-value" id="dash-expenses-total">R$ 0,00</div>
+<div class="metric-sub" id="dash-expenses-split">Acerto 50/50 em dia</div> </div>
+<div class="metric-card" onclick="switchTab('wishlist')">
+<div class="metric-title">Lista de Desejos</div>
+<div class="metric-value" id="dash-wishlist-count">0 itens</div>
+<div class="metric-sub" id="dash-wishlist-total">Ganho: R$ 0,00</div>
+</div>
+<div class="metric-card" onclick="switchTab('contracts')">
+<div class="metric-title">Orçamento da Festa</div>
+<div class="metric-value" id="dash-contracts-total">R$ 0,00</div>
+<div class="metric-sub" id="dash-contracts-paid">Pago: R$ 0,00</div>
+</div>
+<div class="metric-card" onclick="switchTab('guests')">
+<div class="metric-title">Convidados</div>
+<div class="metric-value" id="dash-guests-count">0 pessoas</div>
+<div class="metric-sub" id="dash-guests-confirmed">0 confirmados</div>
+</div>
+</div>
+<!-- Próximas Tarefas -->
+<div class="card">
+<div style="display:flex; justify-content:space-between; align-items:center;
+margin-bottom:10px;">
+<h3 style="font-size:0.95rem; font-weight:700;">Próximas Decisões</h3>
+<span style="font-size:0.75rem; color:var(--primary); cursor:pointer; font-weight:600;"
+onclick="switchTab('guests')">Ver todas</span>
+</div>
+<div id="dash-tasks-list"></div>
+</div>
+</div>
+<!-- ABA 2: DESPESAS DO DIA A DIA -->
+<div id="tab-expenses" class="tab-view">
+<div style="display:flex; justify-content:space-between; align-items:center;
+margin-bottom:12px;">
+<h2 style="font-family:var(--font-title); font-size:1.25rem;">Despesas do Dia a Dia</h2>
+<span id="current-month-display" style="font-size:0.8rem; font-weight:600;
+color:var(--text-muted);"></span>
+</div>
+<!-- Card Acerto 50/50 -->
+<div class="acerto-card" id="expense-split-card">
+<div class="acerto-icon">⚖️</div>
+<div> <div id="expense-split-title" style="font-size:0.9rem; font-weight:700;">Balanço do
+Mês</div>
+<div id="expense-split-desc" class="acerto-text">Calculando...</div>
+</div>
+</div>
+<!-- Resumo Valores -->
+<div class="card" style="display:flex; justify-content:space-around; text-align:center;
+padding:12px;">
+<div>
+<div style="font-size:0.7rem; color:var(--text-muted);">Total do Mês</div>
+<div id="exp-total-mes" style="font-size:1rem; font-weight:700; color:var(--primary);">R$
+0,00</div>
+</div>
+<div style="width:1px; background:var(--surface-border);"></div>
+<div>
+<div style="font-size:0.7rem; color:var(--text-muted);">Bruno pagou</div>
+<div id="exp-total-bruno" style="font-size:1rem; font-weight:700;">R$ 0,00</div>
+</div>
+<div style="width:1px; background:var(--surface-border);"></div>
+<div>
+<div style="font-size:0.7rem; color:var(--text-muted);">Jeanne pagou</div>
+<div id="exp-total-jeanne" style="font-size:1rem; font-weight:700;">R$ 0,00</div>
+</div>
+</div>
+<!-- Filtro de Pagador -->
+<div class="filter-pills" id="expenses-payer-pills">
+<div class="pill active" onclick="filterExpensesPayer('Todos', this)">Todos</div>
+<div class="pill" onclick="filterExpensesPayer('Bruno', this)">Só Bruno</div>
+<div class="pill" onclick="filterExpensesPayer('Jeanne', this)">Só Jeanne</div>
+</div>
+<!-- Lista de Despesas -->
+<div class="card" style="padding:4px 0;">
+<div id="expenses-list"></div>
+</div>
+</div>
+<!-- ABA 3: LISTA DE DESEJOS -->
+<div id="tab-wishlist" class="tab-view">
+<div style="display:flex; justify-content:space-between; align-items:center;
+margin-bottom:12px;"> <h2 style="font-family:var(--font-title); font-size:1.25rem;">Lista de Desejos &
+Enxoval</h2>
+</div>
+<!-- Card Totalizador Wishlist -->
+<div class="card" style="display:flex; justify-content:space-around; text-align:center;
+padding:12px;">
+<div>
+<div style="font-size:0.7rem; color:var(--text-muted);">Meta Estimada</div>
+<div id="wish-total-estimado" style="font-size:1rem; font-weight:700;">R$ 0,00</div>
+</div>
+<div style="width:1px; background:var(--surface-border);"></div>
+<div>
+<div style="font-size:0.7rem; color:var(--text-muted);">Já Conquistado / Ganho</div>
+<div id="wish-total-ganho" style="font-size:1rem; font-weight:700;
+color:var(--secondary);">R$ 0,00</div>
+</div>
+</div>
+<!-- Busca -->
+<div class="form-group">
+<input type="text" class="form-input" id="wishlist-search" placeholder="Buscar item (ex:
+Geladeira, Sofá, Panelas)..." oninput="renderWishlist()" />
+</div>
+<!-- Filtro por Categoria -->
+<div class="filter-pills" id="wishlist-cat-pills">
+<div class="pill active" onclick="filterWishlistCategory('Todas', this)">Todas</div>
+<div class="pill" onclick="filterWishlistCategory('Eletrodomésticos', this)">Eletros</div>
+<div class="pill" onclick="filterWishlistCategory('Móveis', this)">Móveis</div>
+<div class="pill" onclick="filterWishlistCategory('Cozinha', this)">Cozinha</div>
+<div class="pill" onclick="filterWishlistCategory('Sala', this)">Sala</div>
+</div>
+<!-- Lista de Itens -->
+<div class="card" style="padding:4px 0;">
+<div id="wishlist-items-container"></div>
+</div>
+</div>
+<!-- ABA 4: CONTRATOS & FINANCEIRO -->
+<div id="tab-contracts" class="tab-view">
+<h2 style="font-family:var(--font-title); font-size:1.25rem; margin-bottom:12px;">Orçamento & Contratos</h2>
+<!-- Card Progresso de Pagamento -->
+<div class="card">
+<div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+<span style="font-size:0.8rem; font-weight:600;">Custo Total Estimado da Festa</span>
+<span id="contracts-total-header" style="font-weight:700; color:var(--primary);">R$
+0,00</span>
+</div>
+<div style="background:var(--surface-border); height:8px; border-radius:4px;
+overflow:hidden; margin-bottom:10px;">
+<div id="contracts-progress-bar" style="background:var(--secondary); height:100%;
+width:0%;"></div>
+</div>
+<div style="display:flex; justify-content:space-between; font-size:0.75rem;">
+<span style="color:var(--secondary); font-weight:600;" id="contracts-paid-val">Pago: R$
+0,00</span>
+<span style="color:#B06000; font-weight:600;" id="contracts-due-val">A Pagar: R$
+0,00</span>
+</div>
+</div>
+<!-- Lista de Fornecedores -->
+<div class="card" style="padding:4px 0;">
+<div id="contracts-list"></div>
+</div>
+</div>
+<!-- ABA 5: CONVIDADOS & CRONOGRAMA -->
+<div id="tab-guests" class="tab-view">
+<div class="filter-pills" style="margin-bottom:16px;">
+<div class="pill active" id="subtab-btn-guests"
+onclick="toggleGuestsSubtab('guests')">Convidados</div>
+<div class="pill" id="subtab-btn-tasks" onclick="toggleGuestsSubtab('tasks')">Cronograma
+de Decisões</div>
+</div>
+<div id="subtab-guests-content">
+<div class="card" style="padding:4px 0;">
+<div id="guests-list"></div>
+</div>
+</div> <div id="subtab-tasks-content" style="display:none;">
+<div class="card" style="padding:4px 0;">
+<div id="tasks-full-list"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Botão Flutuante (FAB) de Adicionar -->
+<button class="fab" id="fab-add" onclick="handleFabClick()">
+<span>➕</span> <span id="fab-label">Novo</span>
+</button>
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+<button class="nav-btn active" onclick="switchTab('dashboard')" id="nav-dashboard">
+<svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10
+0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+Início
+</button>
+<button class="nav-btn" onclick="switchTab('expenses')" id="nav-expenses">
+<svg viewBox="0 0 24 24"><path d="M19 14V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v8c0 1.1.9
+2 2 2h14c1.1 0 2-.9 2-2zm-9-1c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm13-6v11c0
+1.1-.9 2-2 2H4v-2h17V7h2z"/></svg>
+Despesas
+</button>
+<button class="nav-btn" onclick="switchTab('wishlist')" id="nav-wishlist">
+<svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1
+0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6
+5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89
+2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1
+1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11
+8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg>
+Desejos
+</button>
+<button class="nav-btn" onclick="switchTab('contracts')" id="nav-contracts">
+<svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99
+2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5
+9H13z"/></svg>
+Contratos
+</button>
+<button class="nav-btn" onclick="switchTab('guests')" id="nav-guests"> <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66
+0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3
+3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05
+1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+Convidados
+</button>
+</nav>
+<!-- MODAL: NOVA DESPESA -->
+<div class="modal-backdrop" id="modal-expense"
+onclick="if(event.target===this)closeModals()">
+<div class="modal-sheet">
+<div class="modal-header">
+<div class="modal-title">Nova Despesa do Dia a Dia</div>
+<button class="btn-icon" onclick="closeModals()">✕</button>
+</div>
+<form onsubmit="saveExpense(event)">
+<div class="form-group">
+<label class="form-label">Descrição / Local</label>
+<input type="text" class="form-input" id="exp-form-desc" required placeholder="Ex:
+Mercado Big Lar, Internet, Manutenção" />
+</div>
+<div class="form-group">
+<label class="form-label">Valor (R$)</label>
+<input type="number" step="0.01" class="form-input" id="exp-form-val" required
+placeholder="0,00" />
+</div>
+<div class="form-group">
+<label class="form-label">Categoria</label>
+<select class="form-select" id="exp-form-cat">
+<option value="Mercado">Mercado</option>
+<option value="Casa/Apartamento">Casa / Apartamento</option>
+<option value="Contas">Contas Fixas</option>
+<option value="Lazer">Lazer / Restaurante</option>
+<option value="Casamento">Casamento Direto</option>
+<option value="Outros">Outros</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label">Quem Pagou?</label>
+<select class="form-select" id="exp-form-payer">
+<option value="Bruno">Bruno</option>
+<option value="Jeanne">Jeanne</option> </select>
+</div>
+<div class="form-group">
+<label class="form-label">Data</label>
+<input type="date" class="form-input" id="exp-form-date" />
+</div>
+<button type="submit" class="btn-submit">Salvar Despesa</button>
+</form>
+</div>
+</div>
+<!-- MODAL: NOVO ITEM LISTA DE DESEJOS -->
+<div class="modal-backdrop" id="modal-wishlist"
+onclick="if(event.target===this)closeModals()">
+<div class="modal-sheet">
+<div class="modal-header">
+<div class="modal-title">Novo Item na Lista de Desejos</div>
+<button class="btn-icon" onclick="closeModals()">✕</button>
+</div>
+<form onsubmit="saveWishlistItem(event)">
+<div class="form-group">
+<label class="form-label">Nome do Item</label>
+<input type="text" class="form-input" id="wish-form-name" required placeholder="Ex:
+Geladeira Inox, Lava Louças, Sofá" />
+</div>
+<div class="form-group">
+<label class="form-label">Valor Estimado (R$)</label>
+<input type="number" step="0.01" class="form-input" id="wish-form-val" required
+placeholder="0,00" />
+</div>
+<div class="form-group">
+<label class="form-label">Categoria</label>
+<select class="form-select" id="wish-form-cat">
+<option value="Eletrodomésticos">Eletrodomésticos</option>
+<option value="Móveis">Móveis</option>
+<option value="Cozinha">Cozinha</option>
+<option value="Sala">Sala</option>
+<option value="Quarto">Quarto</option>
+<option value="Casamento">Casamento</option>
+<option value="Outros">Outros</option>
+</select>
+</div>
+<div class="form-group"> <label class="form-label">Prioridade</label>
+<select class="form-select" id="wish-form-prio">
+<option value="Alta">Alta</option>
+<option value="Média">Média</option>
+<option value="Baixa">Baixa</option>
+</select>
+</div>
+<button type="submit" class="btn-submit">Salvar Desejo</button>
+</form>
+</div>
+</div>
+<!-- MODAL: PERSONALIZAÇÃO DA IDENTIDADE VISUAL -->
+<div class="modal-backdrop" id="modal-theme"
+onclick="if(event.target===this)closeModals()">
+<div class="modal-sheet">
+<div class="modal-header">
+<div class="modal-title">Identidade Visual do Casamento</div>
+<button class="btn-icon" onclick="closeModals()">✕</button>
+</div>
+<div class="form-group">
+<label class="form-label">Paleta Temática Pronta</label>
+<div class="swatch-group">
+<div class="swatch" style="background:#8B5E3C;" onclick="applyPalette('#8B5E3C',
+'#526E48', '#FBF9F7')" title="Terracota & Oliva">🌾</div>
+<div class="swatch" style="background:#4A6B53;" onclick="applyPalette('#4A6B53',
+'#C5A059', '#F8FAF8')" title="Eucalipto & Dourado">🌿</div>
+<div class="swatch" style="background:#B76E79;" onclick="applyPalette('#B76E79',
+'#D4AF37', '#FFFBFB')" title="Rose Gold">🌸</div>
+<div class="swatch" style="background:#2C3E50;" onclick="applyPalette('#2C3E50',
+'#C5A059', '#F9FAFC')" title="Azul Clássico & Ouro">💍</div>
+</div>
+</div>
+<div class="form-group" style="margin-top:16px;">
+<label class="form-label">Cor Primária Personalizada</label>
+<input type="color" id="theme-primary-input" class="form-input" style="height:44px;
+padding:4px;" onchange="updateCustomColors()" />
+</div>
+<div class="form-group">
+<label class="form-label">Cor Secundária / Destaque</label> <input type="color" id="theme-secondary-input" class="form-input" style="height:44px;
+padding:4px;" onchange="updateCustomColors()" />
+</div>
+<div class="form-group">
+<label class="form-label">Título do Casal</label>
+<input type="text" class="form-input" id="theme-title-input" value="Bruno & Jeanne"
+oninput="updateCustomTitle()" />
+</div>
+<div class="form-group">
+<label class="form-label">Subtítulo / Local</label>
+<input type="text" class="form-input" id="theme-sub-input" value="18 de Setembro de
+2027 • RE9 Garden" oninput="updateCustomSubtitle()" />
+</div>
+<div style="background:var(--primary-light); padding:12px; border-radius:8px;
+font-size:0.75rem; color:var(--text); margin-top:14px;">
+💡 <strong>Dica de Instalação:</strong> No Chrome do celular, toque no menu
+<strong>⋮</strong> e selecione <strong>"Adicionar à tela inicial"</strong>. O aplicativo
+funcionará como um app nativo, em tela cheia e sem barra de navegador!
+</div>
+</div>
+</div>
+<script>
+// ==========================================
+// DADOS INICIAIS (Extraídos da Planilha Oficial)
+// ==========================================
+const DEFAULT_DATA = {
+theme: {
+primary: '#8B5E3C',
+secondary: '#526E48',
+bg: '#FBF9F7',
+title: 'Bruno & Jeanne',
+subtitle: '18 de Setembro de 2027 • RE9 Garden'
+},
+expenses: [
+{ id: 'e1', desc: 'Supermercado Big Lar', val: 650.40, cat: 'Mercado', payer: 'Bruno', date:
+'2026-09-12' },
+{ id: 'e2', desc: 'Internet Fibra', val: 149.90, cat: 'Contas', payer: 'Jeanne', date: '2026-09-10'
+},
+{ id: 'e3', desc: 'Módulos Switch Smart Tuya', val: 240.00, cat: 'Casa/Apartamento', payer: 'Bruno', date: '2026-09-08' }
+],
+wishlist: [
+{ id: 'w1', name: 'Geladeira Frost Free Inox', val: 4500, cat: 'Eletrodomésticos', prio: 'Alta',
+status: 'Desejado' },
+{ id: 'w2', name: 'Robô Aspirador Inteligente', val: 1490, cat: 'Eletrodomésticos', prio: 'Alta',
+status: 'Ganho', by: 'Tia Vanda' },
+{ id: 'w3', name: 'Jogo de Panelas Cerâmica', val: 680, cat: 'Cozinha', prio: 'Média', status:
+'Comprado', by: 'Bruno' },
+{ id: 'w4', name: 'Sofá Retrátil 3 Lugares', val: 3200, cat: 'Sala', prio: 'Alta', status:
+'Reservado' },
+{ id: 'w5', name: 'Lava-Louças 14 Serviços', val: 3800, cat: 'Eletrodomésticos', prio: 'Média',
+status: 'Desejado' }
+],
+contracts: [
+{ id: 'c1', name: 'Buffet Toroari (Espaço + Gastronomia)', cat: 'Buffet & Local', total:
+99729.00, paid: 2849.40, status: 'Confirmado' },
+{ id: 'c2', name: 'Assessoria & Cerimonial', cat: 'Cerimonial', total: 3800.00, paid: 2800.00,
+status: 'Confirmado' },
+{ id: 'c3', name: 'Doces Finos', cat: 'Doces & Bolo', total: 4599.50, paid: 90.00, status: 'Em
+Negociação' },
+{ id: 'c4', name: 'Fotografia & Filmagem', cat: 'Foto/Vídeo', total: 5000.00, paid: 0.00, status:
+'Previsto' },
+{ id: 'c5', name: 'Dia de Noiva', cat: 'Beleza Noiva', total: 3200.00, paid: 0.00, status:
+'Previsto' },
+{ id: 'c6', name: 'Trajes (Noivo & Noiva)', cat: 'Vestuário', total: 2000.00, paid: 0.00, status:
+'Previsto' },
+{ id: 'c7', name: 'Celebrante Oficial', cat: 'Cerimônia', total: 2000.00, paid: 0.00, status:
+'Previsto' }
+],
+guests: [
+{ id: 'g1', name: 'Noah Matos', side: 'Bruno', status: 'Confirmado' },
+{ id: 'g2', name: 'Vanda', side: 'Bruno', status: 'Confirmado' },
+{ id: 'g3', name: 'Patrícia', side: 'Bruno', status: 'Confirmado' },
+{ id: 'g4', name: 'Rebecka', side: 'Bruno', status: 'Confirmado' },
+{ id: 'g5', name: 'Sara', side: 'Bruno', status: 'Confirmado' },
+{ id: 'g6', name: 'Flavia', side: 'Bruno', status: 'Confirmado' },
+{ id: 'g7', name: 'Elaine', side: 'Jeanne', status: 'Confirmado' },
+{ id: 'g8', name: 'Josias', side: 'Jeanne', status: 'Confirmado' },
+{ id: 'g9', name: 'Jacq', side: 'Jeanne', status: 'Confirmado' },
+{ id: 'g10', name: 'João', side: 'Jeanne', status: 'Confirmado' },
+{ id: 'g11', name: 'Vovó Eleane', side: 'Jeanne', status: 'Confirmado' },
+{ id: 'g12', name: 'Vovó Benedita', side: 'Jeanne', status: 'Confirmado' } ],
+tasks: [
+{ id: 't1', title: 'Definição e Assinatura do Buffet/Espaço (Toroari)', date: '01/10/2026', resp:
+'Ambos', done: true },
+{ id: 't2', title: 'Fechamento Fotografia & Vídeo', date: '15/11/2026', resp: 'Jeanne', done:
+false },
+{ id: 't3', title: 'Degustação e Escolha dos Doces', date: '10/12/2026', resp: 'Ambos', done:
+false },
+{ id: 't4', title: 'Prova do Vestido de Noiva', date: '20/03/2027', resp: 'Jeanne', done: false },
+{ id: 't5', title: 'Compra das Alianças de Casamento', date: '30/03/2027', resp: 'Bruno', done:
+false }
+]
+};
+// Recupera dados salvos localmente ou usa o default
+let appData = JSON.parse(localStorage.getItem('wedding_app_data')) || DEFAULT_DATA;
+function saveState() {
+localStorage.setItem('wedding_app_data', JSON.stringify(appData));
+}
+const fmtMoeda = (v) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'
+}).format(v);
+// ==========================================
+// TEMA & IDENTIDADE VISUAL
+// ==========================================
+function applyTheme() {
+const root = document.documentElement;
+root.style.setProperty('--primary', appData.theme.primary);
+root.style.setProperty('--secondary', appData.theme.secondary);
+root.style.setProperty('--bg', appData.theme.bg || '#FBF9F7');
+document.getElementById('meta-theme-color').setAttribute('content',
+appData.theme.primary);
+document.getElementById('app-title-display').innerText = appData.theme.title;
+document.getElementById('app-subtitle-display').innerText = appData.theme.subtitle;
+document.getElementById('theme-primary-input').value = appData.theme.primary;
+document.getElementById('theme-secondary-input').value = appData.theme.secondary;
+document.getElementById('theme-title-input').value = appData.theme.title;
+document.getElementById('theme-sub-input').value = appData.theme.subtitle;
+} function applyPalette(pri, sec, bg) {
+appData.theme.primary = pri;
+appData.theme.secondary = sec;
+appData.theme.bg = bg;
+saveState();
+applyTheme();
+}
+function updateCustomColors() {
+appData.theme.primary = document.getElementById('theme-primary-input').value;
+appData.theme.secondary = document.getElementById('theme-secondary-input').value;
+saveState();
+applyTheme();
+}
+function updateCustomTitle() {
+appData.theme.title = document.getElementById('theme-title-input').value;
+saveState();
+applyTheme();
+}
+function updateCustomSubtitle() {
+appData.theme.subtitle = document.getElementById('theme-sub-input').value;
+saveState();
+applyTheme();
+}
+// ==========================================
+// CONTAGEM REGRESSIVA
+// ==========================================
+const weddingDate = new Date(2027, 8, 18, 17, 0, 0); // 18/09/2027 às 17h
+function updateCountdown() {
+const now = new Date();
+const diff = weddingDate - now;
+if (diff > 0) {
+const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+const mins = Math.floor((diff / (1000 * 60)) % 60);
+document.getElementById('cd-days').innerText = days;
+document.getElementById('cd-hours').innerText = hours;
+document.getElementById('cd-mins').innerText = mins; }
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+// ==========================================
+// NAVEGAÇÃO DE ABAS
+// ==========================================
+let currentTab = 'dashboard';
+function switchTab(tabId) {
+currentTab = tabId;
+document.querySelectorAll('.tab-view').forEach(el => el.classList.remove('active'));
+document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+const targetView = document.getElementById('tab-' + tabId);
+const targetNav = document.getElementById('nav-' + tabId);
+if (targetView) targetView.classList.add('active');
+if (targetNav) targetNav.classList.add('active');
+const fab = document.getElementById('fab-add');
+const fabLabel = document.getElementById('fab-label');
+if (tabId === 'expenses') {
+fab.style.display = 'flex';
+fabLabel.innerText = 'Nova Despesa';
+} else if (tabId === 'wishlist') {
+fab.style.display = 'flex';
+fabLabel.innerText = 'Novo Desejo';
+} else {
+fab.style.display = 'none';
+}
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function handleFabClick() {
+if (currentTab === 'expenses') {
+document.getElementById('exp-form-date').value = new Date().toISOString().split('T')[0];
+document.getElementById('modal-expense').classList.add('active');
+} else if (currentTab === 'wishlist') {
+document.getElementById('modal-wishlist').classList.add('active');
+}
+} function closeModals() {
+document.querySelectorAll('.modal-backdrop').forEach(el => el.classList.remove('active'));
+}
+function openThemeModal() {
+document.getElementById('modal-theme').classList.add('active');
+}
+// ==========================================
+// RENDERIZADORES
+// ==========================================
+// 1. Despesas
+let payerFilter = 'Todos';
+function filterExpensesPayer(p, btn) {
+payerFilter = p;
+document.querySelectorAll('#expenses-payer-pills .pill').forEach(el =>
+el.classList.remove('active'));
+btn.classList.add('active');
+renderExpenses();
+}
+function renderExpenses() {
+const container = document.getElementById('expenses-list');
+let total = 0;
+let totalBruno = 0;
+let totalJeanne = 0;
+appData.expenses.forEach(e => {
+total += e.val;
+if (e.payer === 'Bruno') totalBruno += e.val;
+if (e.payer === 'Jeanne') totalJeanne += e.val;
+});
+document.getElementById('exp-total-mes').innerText = fmtMoeda(total);
+document.getElementById('exp-total-bruno').innerText = fmtMoeda(totalBruno);
+document.getElementById('exp-total-jeanne').innerText = fmtMoeda(totalJeanne);
+document.getElementById('dash-expenses-total').innerText = fmtMoeda(total);
+// Balanço 50/50
+const saldo = (totalBruno - totalJeanne) / 2.0;
+const splitDesc = document.getElementById('expense-split-desc'); const dashSplit = document.getElementById('dash-expenses-split');
+if (saldo === 0) {
+splitDesc.innerText = 'Divisão 50/50 perfeitamente equilibrada!';
+dashSplit.innerText = 'Contas equilibradas';
+} else if (saldo > 0) {
+splitDesc.innerText = `Jeanne acerta com Bruno: ${fmtMoeda(saldo)}`;
+dashSplit.innerText = `Jeanne -> Bruno ${fmtMoeda(saldo)}`;
+} else {
+splitDesc.innerText = `Bruno acerta com Jeanne: ${fmtMoeda(Math.abs(saldo))}`;
+dashSplit.innerText = `Bruno -> Jeanne ${fmtMoeda(Math.abs(saldo))}`;
+}
+const filtered = appData.expenses.filter(e => payerFilter === 'Todos' || e.payer ===
+payerFilter);
+if (filtered.length === 0) {
+container.innerHTML = '<div style="padding:20px; text-align:center; color:var(--text-muted);
+font-size:0.85rem;">Nenhuma despesa registrada.</div>';
+return;
+}
+container.innerHTML = filtered.map(e => `
+<div class="list-item">
+<div class="item-info">
+<div class="item-title">${e.desc}</div>
+<div class="item-meta">${e.date} • ${e.cat} • Pago por
+<strong>${e.payer}</strong></div>
+</div>
+<div class="item-val">${fmtMoeda(e.val)}</div>
+</div>
+`).join('');
+}
+function saveExpense(e) {
+e.preventDefault();
+const desc = document.getElementById('exp-form-desc').value;
+const val = parseFloat(document.getElementById('exp-form-val').value) || 0;
+const cat = document.getElementById('exp-form-cat').value;
+const payer = document.getElementById('exp-form-payer').value;
+const date = document.getElementById('exp-form-date').value || new
+Date().toISOString().split('T')[0];
+appData.expenses.unshift({ id: 'e_' + Date.now(),
+desc, val, cat, payer, date
+});
+saveState();
+renderExpenses();
+closeModals();
+e.target.reset();
+}
+// 2. Wishlist
+let wishlistCatFilter = 'Todas';
+function filterWishlistCategory(c, btn) {
+wishlistCatFilter = c;
+document.querySelectorAll('#wishlist-cat-pills .pill').forEach(el =>
+el.classList.remove('active'));
+btn.classList.add('active');
+renderWishlist();
+}
+function renderWishlist() {
+const container = document.getElementById('wishlist-items-container');
+const search = document.getElementById('wishlist-search').value.toLowerCase();
+let totalEst = 0;
+let totalGanho = 0;
+appData.wishlist.forEach(w => {
+totalEst += w.val;
+if (w.status === 'Comprado' || w.status === 'Ganho') {
+totalGanho += w.val;
+}
+});
+document.getElementById('wish-total-estimado').innerText = fmtMoeda(totalEst);
+document.getElementById('wish-total-ganho').innerText = fmtMoeda(totalGanho);
+document.getElementById('dash-wishlist-count').innerText = appData.wishlist.length + '
+itens';
+document.getElementById('dash-wishlist-total').innerText = 'Ganho: ' +
+fmtMoeda(totalGanho);
+const filtered = appData.wishlist.filter(w => {
+const matchCat = wishlistCatFilter === 'Todas' || w.cat === wishlistCatFilter;
+const matchSearch = !search || w.name.toLowerCase().includes(search); return matchCat && matchSearch;
+});
+if (filtered.length === 0) {
+container.innerHTML = '<div style="padding:20px; text-align:center; color:var(--text-muted);
+font-size:0.85rem;">Nenhum item encontrado.</div>';
+return;
+}
+container.innerHTML = filtered.map(w => {
+const isAcquired = w.status === 'Comprado' || w.status === 'Ganho';
+return `
+<div class="list-item">
+<div class="item-info">
+<div class="item-title" style="${isAcquired ? 'text-decoration:line-through; opacity:0.7;' :
+''}">${w.name}</div>
+<div class="item-meta">${w.cat} • Prioridade ${w.prio} ${w.by ? '• (' + w.by + ')' :
+''}</div>
+</div>
+<div style="text-align:right;">
+<div class="item-val">${fmtMoeda(w.val)}</div>
+<span class="badge badge-${w.status.toLowerCase()}">${w.status}</span>
+</div>
+</div>
+`;
+}).join('');
+}
+function saveWishlistItem(e) {
+e.preventDefault();
+const name = document.getElementById('wish-form-name').value;
+const val = parseFloat(document.getElementById('wish-form-val').value) || 0;
+const cat = document.getElementById('wish-form-cat').value;
+const prio = document.getElementById('wish-form-prio').value;
+appData.wishlist.unshift({
+id: 'w_' + Date.now(),
+name, val, cat, prio, status: 'Desejado'
+});
+saveState();
+renderWishlist();
+closeModals();
+e.target.reset(); }
+// 3. Contratos
+function renderContracts() {
+const container = document.getElementById('contracts-list');
+let total = 0;
+let paid = 0;
+appData.contracts.forEach(c => {
+total += c.total;
+paid += c.paid;
+});
+const due = total - paid;
+const pct = total > 0 ? Math.round((paid / total) * 100) : 0;
+document.getElementById('contracts-total-header').innerText = fmtMoeda(total);
+document.getElementById('contracts-paid-val').innerText = 'Pago: ' + fmtMoeda(paid);
+document.getElementById('contracts-due-val').innerText = 'A Pagar: ' + fmtMoeda(due);
+document.getElementById('contracts-progress-bar').style.width = pct + '%';
+document.getElementById('dash-contracts-total').innerText = fmtMoeda(total);
+document.getElementById('dash-contracts-paid').innerText = 'Pago: ' + fmtMoeda(paid);
+container.innerHTML = appData.contracts.map(c => `
+<div class="list-item">
+<div class="item-info">
+<div class="item-title">${c.name}</div>
+<div class="item-meta">${c.cat} • <span class="badge badge-${c.status ===
+'Confirmado' ? 'confirmado' : 'pendente'}">${c.status}</span></div>
+</div>
+<div style="text-align:right;">
+<div class="item-val">${fmtMoeda(c.total)}</div>
+<div style="font-size:0.7rem; color:var(--text-muted);">Pago: ${fmtMoeda(c.paid)}</div>
+</div>
+</div>
+`).join('');
+}
+// 4. Convidados & Tarefas
+function toggleGuestsSubtab(sub) {
+if (sub === 'guests') {
+document.getElementById('subtab-guests-content').style.display = 'block'; document.getElementById('subtab-tasks-content').style.display = 'none';
+document.getElementById('subtab-btn-guests').classList.add('active');
+document.getElementById('subtab-btn-tasks').classList.remove('active');
+} else {
+document.getElementById('subtab-guests-content').style.display = 'none';
+document.getElementById('subtab-tasks-content').style.display = 'block';
+document.getElementById('subtab-btn-guests').classList.remove('active');
+document.getElementById('subtab-btn-tasks').classList.add('active');
+}
+}
+function toggleTask(id) {
+const t = appData.tasks.find(x => x.id === id);
+if (t) {
+t.done = !t.done;
+saveState();
+renderTasks();
+}
+}
+function renderGuestsAndTasks() {
+// Guests
+const gContainer = document.getElementById('guests-list');
+const confirmed = appData.guests.filter(g => g.status === 'Confirmado').length;
+document.getElementById('dash-guests-count').innerText = appData.guests.length + '
+pessoas';
+document.getElementById('dash-guests-confirmed').innerText = confirmed + ' confirmados';
+gContainer.innerHTML = appData.guests.map(g => `
+<div class="list-item">
+<div class="item-info">
+<div class="item-title">${g.name}</div>
+<div class="item-meta">Lado: ${g.side} • Status: ${g.status}</div>
+</div>
+<span class="badge badge-confirmado">${g.status}</span>
+</div>
+`).join('');
+renderTasks();
+}
+function renderTasks() {
+const dashList = document.getElementById('dash-tasks-list'); const fullList = document.getElementById('tasks-full-list');
+dashList.innerHTML = appData.tasks.slice(0, 3).map(t => `
+<div style="display:flex; align-items:center; gap:8px; padding:6px 0; font-size:0.85rem;">
+<input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTask('${t.id}')" />
+<span style="${t.done ? 'text-decoration:line-through; color:var(--text-muted);' :
+'font-weight:500;'}">${t.title}</span>
+</div>
+`).join('');
+fullList.innerHTML = appData.tasks.map(t => `
+<div class="list-item">
+<div style="display:flex; align-items:center; gap:10px; flex:1;">
+<input type="checkbox" style="width:18px; height:18px;" ${t.done ? 'checked' : ''}
+onchange="toggleTask('${t.id}')" />
+<div>
+<div class="item-title" style="${t.done ? 'text-decoration:line-through;
+color:var(--text-muted);' : ''}">${t.title}</div>
+<div class="item-meta">Prazo: ${t.date} • Resp: ${t.resp}</div>
+</div>
+</div>
+</div>
+`).join('');
+}
+// Inicialização
+applyTheme();
+renderExpenses();
+renderWishlist();
+renderContracts();
+renderGuestsAndTasks();
+switchTab('dashboard');
+</script>
+</body>
+</html>
